@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="sss" style="width: 200px;height: 200px;border: solid 1px"></div>
+</body>
+<script>
+    var x=new XMLHttpRequest();
+    x.open('get','https://blog.zsxsoft.com/w2tmp/get.php?name=汉森',false);
+   /* x.onload = function (e) {
+        if (x.readyState === 4) {
+            if (x.status === 200) {
+                console.log(x.responseText);
+            } else {
+                console.error(x.statusText);
+            }
+        }
+    };
+   // alert(1);
+    x.onerror = function (e) {
+        console.error(x.statusText);
+    };
+   // alert(1);*/
+    x.send(null);
+   //alert(1);
+    //alert(x.readyState)
+   // alert(x.status);
+   //alert( console.log(x.responseText))
+    var a=JSON.parse(x.responseText)
+    //alert(a)
+    document.getElementById('sss').innerHTML=a.message;
+
+</script>
+</html>
