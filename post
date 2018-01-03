@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="sss" style="width: 200px;height: 200px;border: solid 1px"></div>
+</body>
+<script>
+    var x=new XMLHttpRequest();
+    x.open('post','https://blog.zsxsoft.com/w2tmp/post.php',false);
+    x.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+     x.send('name=汉森');
+
+     var a=JSON.parse(x.responseText)
+
+     document.getElementById('sss').innerHTML=a.message;
+
+</script>
+</html>
